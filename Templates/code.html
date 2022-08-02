@@ -1,0 +1,145 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meEditor :: - Home</title>
+
+    <link rel="stylesheet" href="{% static 'Css/code.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/index.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+    <!--Fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+    <!--The modal-->
+
+    <div class="modal fade" id="logModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="login">
+
+                    <div class="github">
+
+                        <div class="git">
+
+                        </div>
+                        <a href="{% url "social:begin" "github" %}"><img src="{% static 'Images/github.png' %}" alt="github"></a>
+
+                        <span>Github</span>
+
+                    </div>
+                    
+        
+                    <div class="linkin">
+                        <a href="{% url "social:begin" "linkedin-oauth2" %}"><img src="{% static 'Images/linkedin.png' %}" alt="linked"></a>
+
+                        <span>Linked-In</span>
+
+                    </div>
+                    
+        
+                </div>
+            
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <!--This is the heading-->
+    <div class="header">
+        
+        <h2>Me Editor IDE</h2>
+
+
+        <div class="logBtn" id="logPlace" data-bs-toggle="modal" data-bs-target="#logModal" >
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 22c-3.123 0-5.914-1.441-7.749-3.69.259-.588.783-.995 1.867-1.246 2.244-.518 4.459-.981 3.393-2.945-3.155-5.82-.899-9.119 2.489-9.119 3.322 0 5.634 3.177 2.489 9.119-1.035 1.952 1.1 2.416 3.393 2.945 1.082.25 1.61.655 1.871 1.241-1.836 2.253-4.628 3.695-7.753 3.695z"/></svg>
+
+        </div>
+    
+    
+    </div>
+
+
+    <div class="form">
+
+        <form method="POST" id="saveCode">
+
+            {% csrf_token %}
+
+            <div class="head">
+
+                <div class="chooseLang">
+
+                    <span>Choose Language :</span>
+
+                    {{codeForm.language}}
+    
+                </div>
+    
+                <div class="saveFile">
+
+                    <span>File Name :</span>
+    
+                    {{codeForm.code_name}}
+    
+                </div>
+
+            </div>
+            
+
+            <div class="editor" id="editor" >
+
+            </div>
+
+
+            <div class="control">
+
+                <button type="submit" > Save Code </button>
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
+</body>
+
+<!--Jquery link-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+
+<!--Js link-->
+
+<script src="{% static 'Js/lib/ace.js' %}"></script>
+<script src="{% static 'Js/lib/theme-monokai.js' %}"></script>
+<script src="{% static 'Js/code.js' %}"></script>
+
+</html>

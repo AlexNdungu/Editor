@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* The head section */
+
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(90, 90, 228);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(241, 241, 241);
+    padding: 20px;
+}
+
+.logBtn {
+    transform: scale(1.2);
+}
+
+
+.login {
+    width: 100%;
+    height: 200px;
+}
+
+.github,.linkin {
+    width: 100%;
+    height: 50%;
+}
+
+.github a img,.linkin a img {
+    width: 80px;
+    height: 80px;
+}
+
+/* Select language section */
+
+.control-panel {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(216, 216, 255);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.control-panel span {
+    color: rgb(90, 90, 228);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px;
+}
+
+.control-panel select {
+    width: 120px;
+    height: 40px;
+    margin: 20px;
+}
+
+
+/* My editor section */
+
+.editor {
+    height: 500px;
+}
+
+
+/* the button container */
+
+.button-container {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The run code button */
+
+.run {
+    width: 200px;
+    height: 50px;
+    background-color: rgb(90, 90, 228);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(216, 216, 255);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.run:hover {
+    transform: scale(1.1);
+}
+
+
+/* The output */
+
+.output {
+    width: 100%;
+    height: 200px;
+    border: 2px solid rgb(124, 124, 213);
+    border-radius: 20px;
+}
